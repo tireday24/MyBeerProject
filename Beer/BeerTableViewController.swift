@@ -19,6 +19,7 @@ class BeerTableViewController: UITableViewController {
         super.viewDidLoad()
         
         requestApi()
+      
 
     }
 
@@ -30,6 +31,7 @@ class BeerTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BeerTableViewCell.identifier) as? BeerTableViewCell else { return UITableViewCell()}
         
         let randomImage = URL(string: beerList[indexPath.row].beerImageInfo)
+        
         cell.beerName.text = beerList[indexPath.row].beerNameInfo
         cell.beerImage.kf.setImage(with: randomImage)
         cell.beerDescription.text = beerList[indexPath.row].beerDescriptionInfo
